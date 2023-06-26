@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const bodyParse = require("body-parser");
+const cors = require("cors");
 require("dotenv/config");
 
 app.use(
@@ -11,6 +12,7 @@ app.use(
   })
 );
 app.use(bodyParse.json());
+app.use(cors());
 
 const produkRoutes = require("./routes/product");
 const keranjangRoutes = require("./routes/keranjang");
